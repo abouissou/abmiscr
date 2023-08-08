@@ -1,0 +1,39 @@
+---
+title: "Ordination"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ordination}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r options, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library("abmiscr")
+suppressMessages(library("vegan"))
+data("varespec")
+ggplot2::theme_set(ggplot2::theme_classic(base_size = 10))
+```
+
+One common use case is the ability to run and compare a number of ordinations, particularly their stress. I use the `vegan::varespec` dataset for an example.
+
+First, I calculate a series of NMDS ordinations using a simple helper function `calc_mds()`. Oftentimes, keeping the intermediate distance matrix and list of NMDS ordinations is helpful, so I assign those to separate objects:
+
+```{r mds-info}
+dist_matrix <- calc_dist_matrix(varespec)
+mds_list <- get_mds_list(dist_matrix)
+mds_info <- get_mds_info(mds_list)
+mds_info
+```
+
+Then, as a visual, I create a plot that compares the stress versus the number of dimensions:
+
+```{r stress-vs-dim-plot, fig.width = 4}
+plot_stress_dim(mds_info)
+```
