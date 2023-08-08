@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- Badges: Start -->
+[![R-CMD-check](https://github.com/abouissou/abmiscr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/abouissou/abmiscr/actions/workflows/R-CMD-check.yaml)
+<!-- Badges: End -->
+
 # abmiscr
 
 The goal of abmiscr is to provide a suite of functions that are useful in Adrien Bouissou's workflow.

@@ -1,5 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file. -->
+<!-- Badges: Start -->
+
+[![R-CMD-check](https://github.com/abouissou/abmiscr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/abouissou/abmiscr/actions/workflows/R-CMD-check.yaml)
+<!-- Badges: End -->
 
 # abmiscr
 
